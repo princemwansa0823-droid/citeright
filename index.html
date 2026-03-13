@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CiteRight — Professional Academic Writing Services</title>
+<meta name="description" content="Professional academic writing services in Zambia. Research proposals, reports, assignments, internship reports, lab reports and grant proposals. Fast, confidential, verified citations.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;font-size:16px;line-height:1.7}
+
+  /* NAV */
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:0.85rem 2rem;background:#0C2D5E;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(212,160,23,0.3)}
+  .nav-brand{font-size:1.2rem;font-weight:600;color:#fff;text-decoration:none}
+  .nav-brand span{color:#D4A017}
+  .nav-links{display:flex;gap:1.5rem}
+  .nav-links a{font-size:13px;color:#B5D4F4;text-decoration:none;cursor:pointer;transition:color 0.2s}
+  .nav-links a:hover{color:#D4A017}
+  .nav-cta{padding:0.4rem 1.1rem;background:#D4A017;color:#0C2D5E;border-radius:6px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:background 0.2s}
+  .nav-cta:hover{background:#B8880F}
+
+  /* HERO */
+  .hero{padding:5rem 2rem 4rem;text-align:center;background:#0C2D5E;color:#fff;position:relative;overflow:hidden}
+  .hero-circle1{position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(212,160,23,0.07);pointer-events:none}
+  .hero-circle2{position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(24,95,165,0.2);pointer-events:none}
+  .logo-tag{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#B5D4F4;margin-bottom:0.6rem;position:relative}
+  .brand{font-size:2.8rem;font-weight:700;margin-bottom:0.75rem;color:#fff;position:relative}
+  .brand span{color:#D4A017}
+  .tagline{font-size:1.1rem;color:#B5D4F4;max-width:500px;margin:0 auto 0.4rem;position:relative}
+  .sub-tagline{font-size:13px;color:rgba(181,212,244,0.65);margin:0 auto 2.25rem;position:relative}
+  .cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+  .cta-primary{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 2rem;background:#D4A017;color:#0C2D5E;border-radius:6px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:background 0.2s;text-decoration:none}
+  .cta-primary:hover{background:#B8880F}
+  .cta-secondary{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.75rem;background:transparent;color:#fff;border-radius:6px;font-size:15px;font-weight:500;border:1.5px solid rgba(255,255,255,0.3);cursor:pointer;transition:background 0.2s;text-decoration:none}
+  .cta-secondary:hover{background:rgba(255,255,255,0.08)}
+
+  .accent-bar{height:4px;background:linear-gradient(90deg,#D4A017 0%,#185FA5 50%,#D4A017 100%)}
+
+  /* STATS */
+  .stats-bar{display:flex;justify-content:center;background:#185FA5;flex-wrap:wrap}
+  .stat{flex:1;min-width:130px;padding:1.1rem 1.5rem;text-align:center;border-right:0.5px solid rgba(255,255,255,0.15)}
+  .stat:last-child{border-right:none}
+  .stat-num{font-size:1.5rem;font-weight:700;color:#D4A017}
+  .stat-label{font-size:11px;color:#B5D4F4;text-transform:uppercase;letter-spacing:0.08em}
+
+  /* SECTIONS */
+  .section{padding:3rem 2rem;max-width:800px;margin:0 auto}
+  .section-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4A017;margin-bottom:0.4rem}
+  .section h2{font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;color:#0C2D5E}
+  .divider{border:none;border-top:1px solid #f0f0f0}
+
+  /* SERVICE CARDS */
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .service-card{border-radius:10px;padding:1.5rem 1.2rem;border:0.5px solid transparent;transition:transform 0.2s,box-shadow 0.2s;cursor:default}
+  .service-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+  .service-card h3{font-size:14px;font-weight:600;margin-bottom:0.3rem}
+  .service-card p{font-size:12px;opacity:0.85;margin-bottom:0.85rem;line-height:1.5}
+  .service-tag{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.22);font-weight:600}
+  .service-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem}
+  .service-icon svg{width:20px;height:20px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card-blue{background:#185FA5;color:#fff;border-color:#0C447C}.card-blue .service-icon{background:rgba(255,255,255,0.15)}.card-blue .service-icon svg{stroke:#fff}
+  .card-gold{background:#D4A017;color:#3a2800;border-color:#B8880F}.card-gold .service-icon{background:rgba(255,255,255,0.25)}.card-gold .service-icon svg{stroke:#3a2800}
+  .card-navy{background:#0C2D5E;color:#fff;border-color:#06193a}.card-navy .service-icon{background:rgba(255,255,255,0.12)}.card-navy .service-icon svg{stroke:#D4A017}
+  .card-steel{background:#2E5D8E;color:#fff;border-color:#1e4570}.card-steel .service-icon{background:rgba(255,255,255,0.15)}.card-steel .service-icon svg{stroke:#fff}
+  .card-amber{background:#B8880F;color:#fff;border-color:#8a6208}.card-amber .service-icon{background:rgba(255,255,255,0.18)}.card-amber .service-icon svg{stroke:#fff}
+  .card-teal{background:#0F6E56;color:#fff;border-color:#085041}.card-teal .service-icon{background:rgba(255,255,255,0.15)}.card-teal .service-icon svg{stroke:#fff}
+
+  /* HOW IT WORKS */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0;position:relative}
+  .step{text-align:center;padding:1.25rem 0.75rem;position:relative}
+  .step:not(:last-child)::after{content:'→';position:absolute;right:-8px;top:1.5rem;font-size:1.1rem;color:#D4A017;font-weight:700}
+  .step-num{width:38px;height:38px;border-radius:50%;background:#0C2D5E;color:#D4A017;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 0.65rem}
+  .step h3{font-size:13px;font-weight:600;margin-bottom:0.25rem;color:#0C2D5E}
+  .step p{font-size:12px;color:#666;line-height:1.5}
+
+  /* PRICING */
+  .pricing-table{border:1px solid #e8e8e8;border-radius:10px;overflow:hidden}
+  .pricing-row{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.3rem;border-bottom:1px solid #f0f0f0;font-size:14px;color:#1a1a2e}
+  .pricing-row:last-child{border-bottom:none}
+  .pricing-row:nth-child(odd){background:#f8f9fc}
+  .price{font-weight:700;color:#185FA5}
+  .badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;background:#E6F1FB;color:#185FA5;font-weight:600;margin-left:6px;vertical-align:middle}
+  .urgent-note{display:flex;align-items:flex-start;gap:10px;background:#FFF8E6;border:1px solid #D4A017;border-radius:8px;padding:0.75rem 1rem;margin-top:1rem;font-size:13px;color:#3a2800;line-height:1.5}
+  .urgent-dot{width:8px;height:8px;border-radius:50%;background:#D4A017;flex-shrink:0;margin-top:6px}
+
+  /* TESTIMONIALS */
+  .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .testimonial{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:1.4rem;border-top:3px solid #185FA5}
+  .stars{color:#D4A017;font-size:15px;margin-bottom:0.6rem;letter-spacing:2px}
+  .testimonial p{font-size:13px;color:#555;font-style:italic;margin-bottom:0.85rem;line-height:1.6}
+  .testimonial-name{font-size:13px;font-weight:600;color:#185FA5}
+  .testimonial-detail{font-size:11px;color:#999}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+  .why-card{background:#f8f9fc;border:1px solid #e8e8e8;border-left:3px solid #D4A017;border-radius:0 8px 8px 0;padding:1rem 1.1rem}
+  .why-card h3{font-size:13px;font-weight:600;margin-bottom:0.2rem;color:#0C2D5E}
+  .why-card p{font-size:12px;color:#666;line-height:1.5}
+
+  /* CONTACT */
+  .contact-section{padding:3.5rem 2rem;text-align:center;background:linear-gradient(135deg,#0C2D5E 0%,#185FA5 100%);color:#fff}
+  .contact-section h2{font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;color:#fff}
+  .contact-section p{font-size:14px;color:#B5D4F4;margin-bottom:1.75rem;line-height:1.7}
+  .contact-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .wa-btn{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.75rem;background:#25D366;color:#fff;border-radius:6px;font-size:14px;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s}
+  .wa-btn:hover{background:#1EAA52}
+  .email-btn{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.75rem;background:#D4A017;color:#0C2D5E;border-radius:6px;font-size:14px;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s}
+  .email-btn:hover{background:#B8880F}
+
+  .footer{padding:1.5rem 2rem;text-align:center;font-size:12px;color:#999;border-top:1px solid #f0f0f0;background:#f8f9fc}
+  .footer span{color:#D4A017;font-weight:600}
+
+  @media(max-width:600px){
+    .brand{font-size:2rem}
+    .nav-links{display:none}
+    .steps .step:not(:last-child)::after{display:none}
+    .hero{padding:3.5rem 1.5rem 3rem}
+    .section{padding:2.25rem 1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-brand" href="#">Cite<span>Right</span></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
+  <div class="logo-tag">Part of the MoreThanJustHR family</div>
+  <div class="brand">Cite<span>Right</span></div>
+  <p class="tagline">Professional academic writing — done right, on time, every time.</p>
+  <p class="sub-tagline">Proposals &nbsp;·&nbsp; Reports &nbsp;·&nbsp; Assignments &nbsp;·&nbsp; Lab Reports &nbsp;·&nbsp; Internship Reports &nbsp;·&nbsp; Grant Proposals</p>
+  <div class="cta-group">
+    <a class="cta-primary" href="#contact">Get started today</a>
+    <a class="cta-secondary" href="#pricing">View pricing</a>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Service types</div></div>
+  <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Standard delivery</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Confidential</div></div>
+  <div class="stat"><div class="stat-num">K150</div><div class="stat-label">Starting from</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-label">What we offer</div>
+  <h2>Academic writing services</h2>
+  <div class="services-grid">
+    <div class="service-card card-blue">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3>Assignments</h3>
+      <p>From short answers to full essay-style academic responses</p>
+      <span class="service-tag">From K150</span>
+    </div>
+    <div class="service-card card-gold">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <h3>Research proposals</h3>
+      <p>Full 3-chapter proposals with literature review and methodology</p>
+      <span class="service-tag">From K800</span>
+    </div>
+    <div class="service-card card-navy">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <h3>Reports</h3>
+      <p>Academic and field reports, structured and well-referenced</p>
+      <span class="service-tag">From K400</span>
+    </div>
+    <div class="service-card card-steel">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+      <h3>Internship reports</h3>
+      <p>Reflective reports covering your placement experience</p>
+      <span class="service-tag">From K500</span>
+    </div>
+    <div class="service-card card-amber">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+      <h3>Lab reports</h3>
+      <p>Scientific write-ups with methodology and analysis</p>
+      <span class="service-tag">From K200</span>
+    </div>
+    <div class="service-card card-teal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <h3>Grant proposals</h3>
+      <p>Compelling funding applications for organisations</p>
+      <span class="service-tag">On request</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-label">Simple process</div>
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Send your brief</h3>
+      <p>Share your topic, requirements, and deadline via WhatsApp or email</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Get a quote</h3>
+      <p>We confirm the price and turnaround time before any work begins</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>We write it</h3>
+      <p>Your work is researched and written to your academic level</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Review and pay</h3>
+      <p>You review, request revisions if needed, then settle payment</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="section-label">Transparent pricing</div>
+  <h2>Service rates</h2>
+  <div class="pricing-table">
+    <div class="pricing-row"><span>Assignments <span class="badge">5–8 pages</span></span><span class="price">From K150</span></div>
+    <div class="pricing-row"><span>Reports <span class="badge">10–15 pages</span></span><span class="price">K400 – K700</span></div>
+    <div class="pricing-row"><span>Internship reports <span class="badge">15+ pages</span></span><span class="price">K500 – K650</span></div>
+    <div class="pricing-row"><span>Lab reports</span><span class="price">K200 – K400</span></div>
+    <div class="pricing-row"><span>Research proposals <span class="badge">3 chapters</span></span><span class="price">K800 – K1,500</span></div>
+    <div class="pricing-row"><span>Grant proposals</span><span class="price">On request</span></div>
+  </div>
+  <div class="urgent-note">
+    <div class="urgent-dot"></div>
+    Urgent delivery under 48 hours attracts an additional K100–K150. Final price depends on complexity, length, and academic level.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="section-label">Client feedback</div>
+  <h2>What our clients say</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Came out top of my class in both the proposal and the report. Could not believe it. Highly recommend."</p>
+      <div class="testimonial-name">T.M.</div>
+      <div class="testimonial-detail">Development Studies, UNZA</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Fast, professional, and the citations were all real. My supervisor was impressed with the literature review."</p>
+      <div class="testimonial-name">C.K.</div>
+      <div class="testimonial-detail">Business Administration, UNZA</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★☆</div>
+      <p>"Very good work on my assignment. Delivered on time and well written. Will definitely use again."</p>
+      <div class="testimonial-name">L.N.</div>
+      <div class="testimonial-detail">Public Health, CBU</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY CITERIGHT -->
+<section class="section">
+  <div class="section-label">Why CiteRight</div>
+  <h2>What sets us apart</h2>
+  <div class="why-grid">
+    <div class="why-card"><h3>Real citations only</h3><p>Every source is verified and traceable — no fabricated references</p></div>
+    <div class="why-card"><h3>Full confidentiality</h3><p>Your privacy is our priority — complete discretion guaranteed</p></div>
+    <div class="why-card"><h3>Zambian context</h3><p>Locally grounded writing that reflects our academic environment</p></div>
+    <div class="why-card"><h3>Fast turnaround</h3><p>Standard 48-hour delivery with urgent options available</p></div>
+    <div class="why-card"><h3>Revisions included</h3><p>We refine the work until you are fully satisfied</p></div>
+    <div class="why-card"><h3>Proven results</h3><p>Clients who have come out top of their class</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2>Ready to get started?</h2>
+  <p>Send us your requirements via WhatsApp or email.<br>We respond promptly and handle every enquiry with complete discretion.</p>
+  <div class="contact-btns">
+    <a class="wa-btn" href="https://wa.me/260776960164" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp us
+    </a>
+    <a class="email-btn" href="mailto:myacademia0823@gmail.com">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0C2D5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email us
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  &copy; 2026 <span>CiteRight</span> — part of the MoreThanJustHR brand. All enquiries handled with complete discretion.
+</footer>
+
+</body>
+</html>
