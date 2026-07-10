@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CiteRight — Professional Academic Writing Services</title>
   <meta name="description" content="Professional academic writing services in Zambia. Research proposals, reports, assignments, internship reports, lab reports and grant proposals. Fast, confidential, verified citations.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050914'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='26' font-weight='700' fill='%2334D399' text-anchor='middle'%3E%5BC%5D%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <style>
@@ -100,6 +101,17 @@
       letter-spacing: -0.02em;
     }
     .nav-brand span { color: var(--accent); }
+    .nav-brand .cr-b {
+      color: var(--green);
+      display: inline-block;
+    }
+    .nav-brand .cr-b.l { animation: crBrandL 0.7s cubic-bezier(0.2,0.8,0.2,1) 0.15s both; }
+    .nav-brand .cr-b.r { animation: crBrandR 0.7s cubic-bezier(0.2,0.8,0.2,1) 0.15s both; }
+    @keyframes crBrandL { from { transform: translateX(-8px); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes crBrandR { from { transform: translateX(8px); opacity: 0; } to { transform: none; opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .nav-brand .cr-b.l, .nav-brand .cr-b.r { animation: none; }
+    }
 
     .nav-links {
       display: flex;
@@ -277,6 +289,18 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+    .brand .cr-b {
+      display: inline-block;
+      color: var(--green);
+      background: none;
+      -webkit-text-fill-color: var(--green);
+      opacity: 0;
+    }
+    .brand.visible .cr-b.l { animation: crBrandL 0.8s cubic-bezier(0.2,0.8,0.2,1) 0.5s both; }
+    .brand.visible .cr-b.r { animation: crBrandR 0.8s cubic-bezier(0.2,0.8,0.2,1) 0.5s both; }
+    @media (prefers-reduced-motion: reduce) {
+      .brand .cr-b { animation: none !important; opacity: 1; }
     }
 
     .tagline {
@@ -1038,7 +1062,7 @@
 
 <!-- Nav -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
-  <a class="nav-brand" href="#" aria-label="CiteRight Home">Cite<span>Right</span></a>
+  <a class="nav-brand" href="#" aria-label="CiteRight Home">Cite<span class="cr-b l">[</span><span>Right</span><span class="cr-b r">]</span></a>
   <div class="nav-links" role="list">
     <a href="#services" role="listitem">Services</a>
     <a href="#pricing" role="listitem">Pricing</a>
@@ -1086,7 +1110,7 @@
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-tag" role="text">Part of the MoreThanJustHR family</div>
-  <h1 class="brand reveal" id="hero-heading">Cite<em>Right</em></h1>
+  <h1 class="brand reveal" id="hero-heading">Cite<span class="cr-b l">[</span><em>Right</em><span class="cr-b r">]</span></h1>
   <p class="tagline reveal">Professional academic writing — done right, on time, every time.</p>
   <div class="sub-tagline reveal" role="list" aria-label="Services offered">
     <span class="ticker-item t-blue" role="listitem">Assignments</span>
