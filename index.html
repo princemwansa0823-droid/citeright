@@ -1517,7 +1517,7 @@
 
   // Scroll reveal
   if (!prefersReducedMotion) {
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = Array.from(document.querySelectorAll('.reveal')).filter(el => !el.closest('.hero'));
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
