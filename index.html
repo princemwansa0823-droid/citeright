@@ -310,14 +310,15 @@
     }
     .brand .cite-wipe {
       display: inline-block;
-      opacity: 1;
-      transform: none;
+      opacity: 0;
+      transform: translateY(10px);
       color: #eef2ff;
       background: none;
       -webkit-text-fill-color: #eef2ff;
+      will-change: transform, opacity;
     }
     .brand-wrap.visible .cite-wipe {
-      animation: none;
+      animation: crCiteIn 0.65s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
     }
     @keyframes crCiteIn { to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) {
@@ -328,10 +329,11 @@
       color: var(--green);
       background: none;
       -webkit-text-fill-color: var(--green);
-      opacity: 1;
+      opacity: 0;
+      will-change: transform, opacity, color;
     }
-    .brand-wrap.visible .cr-b.l { animation: none; }
-    .brand-wrap.visible .cr-b.r { animation: none; }
+    .brand-wrap.visible .cr-b.l { animation: crBracketSeqL 4.2s cubic-bezier(0.45,0,0.55,1) 0.55s both; }
+    .brand-wrap.visible .cr-b.r { animation: crBracketSeqR 4.2s cubic-bezier(0.45,0,0.55,1) 0.55s both; }
     @keyframes crBracketSeqL {
       0% { opacity: 0; transform: translateX(-16px) scaleX(1.5); color: var(--green); -webkit-text-fill-color: var(--green); animation-timing-function: cubic-bezier(0.34,1.56,0.64,1); }
       11.9% { opacity: 1; transform: translateX(2px) scaleX(0.92); animation-timing-function: cubic-bezier(0.34,1.56,0.64,1); }
@@ -1169,7 +1171,7 @@
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-tag" role="text">Part of the MoreThanJustHR family</div>
-  <div class="brand-wrap"><h1 class="brand" id="hero-heading"><span class="cite-wipe">Cite</span><span class="cr-b l">[</span><em>Right</em><span class="cr-b r">]</span></h1></div>
+  <div class="brand-wrap reveal"><h1 class="brand" id="hero-heading"><span class="cite-wipe">Cite</span><span class="cr-b l">[</span><em>Right</em><span class="cr-b r">]</span></h1></div>
   <p class="tagline reveal">Professional academic writing — done right, on time, every time.</p>
   <div class="sub-tagline reveal" role="list" aria-label="Services offered">
     <span class="ticker-item t-blue" role="listitem">Assignments</span>
@@ -1525,9 +1527,18 @@
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => revealObs.observe(el));
-    document.querySelectorAll('.hero .reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 80 + i * 110);
-    });
+    const startHeroReveal = () => {
+      document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 80 + i * 110);
+      });
+    };
+    if (document.fonts && document.fonts.ready) {
+      const fontsDone = document.fonts.ready.catch(() => {});
+      const safetyTimeout = new Promise(resolve => setTimeout(resolve, 1200));
+      Promise.race([fontsDone, safetyTimeout]).then(startHeroReveal);
+    } else {
+      startHeroReveal();
+    }
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
