@@ -1169,7 +1169,7 @@
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-tag" role="text">Part of the MoreThanJustHR family</div>
-  <div class="brand-wrap visible"><h1 class="brand" id="hero-heading"><span class="cite-wipe">Cite</span><span class="cr-b l">[</span><em>Right</em><span class="cr-b r">]</span></h1></div>
+  <div class="brand-wrap"><h1 class="brand" id="hero-heading"><span class="cite-wipe">Cite</span><span class="cr-b l">[</span><em>Right</em><span class="cr-b r">]</span></h1></div>
   <p class="tagline reveal">Professional academic writing — done right, on time, every time.</p>
   <div class="sub-tagline reveal" role="list" aria-label="Services offered">
     <span class="ticker-item t-blue" role="listitem">Assignments</span>
@@ -1526,6 +1526,8 @@
     }, { threshold: 0.08 });
     reveals.forEach(el => revealObs.observe(el));
     const startHeroReveal = () => {
+      const brandWrap = document.querySelector('.brand-wrap');
+      if (brandWrap) setTimeout(() => brandWrap.classList.add('visible'), 80);
       document.querySelectorAll('.hero .reveal').forEach((el, i) => {
         setTimeout(() => el.classList.add('visible'), 80 + i * 110);
       });
