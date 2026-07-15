@@ -548,6 +548,25 @@
       margin: 0 auto;
       gap: 2px;
     }
+    .uni-trust {
+      margin-top: 2.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 13px;
+    }
+    .uni-trust-label { color: var(--text-dim); }
+    .uni-trust-list {
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+    .uni-dot { color: var(--green); margin: 0 0.15rem; }
+    @media (max-width: 640px) {
+      .uni-trust { font-size: 12px; flex-direction: column; gap: 0.3rem; }
+    }
     .stat-wrap {
       flex: 1;
       min-width: 130px;
@@ -1360,6 +1379,10 @@
       <div class="stat-num" aria-label="Starting from K150">K150</div>
       <div class="stat-label">Starting from</div>
     </div>
+  </div>
+  <div class="uni-trust reveal" role="note" aria-label="Universities served">
+    <span class="uni-trust-label">Trusted by students from</span>
+    <span class="uni-trust-list">UNZA <span class="uni-dot">·</span> CBU <span class="uni-dot">·</span> Mulungushi <span class="uni-dot">·</span> Cavendish <span class="uni-dot">·</span> ZAOU</span>
   </div>
 </section>
 
