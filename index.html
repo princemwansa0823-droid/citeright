@@ -191,8 +191,26 @@
       cursor: pointer;
       transition: color 0.2s;
       font-weight: 500;
+      position: relative;
+      padding: 0 4px;
     }
     .nav-links a:hover { color: var(--text); }
+    .nav-links a::before,
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) scale(0.8);
+      color: var(--green);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .nav-links a::before { content: '['; left: -6px; }
+    .nav-links a::after { content: ']'; right: -6px; }
+    .nav-links a:hover::before,
+    .nav-links a:hover::after { opacity: 1; transform: translateY(-50%) scale(1); }
     .nav-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
 
     .nav-cta {
@@ -1059,6 +1077,20 @@
       animation: divpulse 5s ease-in-out infinite;
     }
     @keyframes divpulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    .divider::after {
+      content: '[ ]';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      background: var(--bg);
+      padding: 0 14px;
+      color: var(--green);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
 
     /* === CONTACT === */
     .contact-section {
